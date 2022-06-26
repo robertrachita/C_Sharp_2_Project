@@ -4,11 +4,29 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:TradingCalendar"
-    Shell.FlyoutBehavior="Disabled">
+    Shell.FlyoutBehavior="Flyout">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <FlyoutItem Title="Home">
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+    </FlyoutItem>
+    
+    <FlyoutItem Title="TradingOverview">
+        <ShellContent
+            Title="Trading Overview"
+            ContentTemplate="{DataTemplate local:TradingOverviewPage}"
+            Route="TradingOverviewPage" />
+    </FlyoutItem>
+    
+ 
+    <!--<FlyoutItem Title="One" FlyoutIcon="{StaticResource IconOne}">
+        <ShellContent
+            Title="One"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="OnePage" />
+    </FlyoutItem>-->
+   
 
 </Shell>
