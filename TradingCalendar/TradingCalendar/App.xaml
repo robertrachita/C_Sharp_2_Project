@@ -5,10 +5,26 @@
              x:Class="TradingCalendar.App">
     <Application.Resources>
         <ResourceDictionary>
+            
+            <Color x:Key="Primary-Color">#02425A</Color>
+            <Color x:Key="Secondary-Color">White</Color>
+            
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource Secondary-Color}" />
+                <Setter Property="FontFamily" Value="Sitka" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="{DynamicResource Primary-Color}"/>
+                <Setter Property="FontFamily" Value="OpenSansRegular" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource Primary-Color}" />
+                <Setter Property="Padding" Value="14,10" />
+            </Style>
+            
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>
