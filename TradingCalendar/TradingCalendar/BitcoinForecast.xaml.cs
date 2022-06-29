@@ -5,10 +5,10 @@ public partial class BitcoinForecast : ContentPage
 	public BitcoinForecast()
 	{
 		InitializeComponent();
-        
-        var sampleData = new MLModel1.ModelInput()
+
+        //Load sample data
+        var sampleData = new BitcoinModel.ModelInput()
         {
-            SNo = 1F,
             Name = @"Bitcoin",
             Symbol = @"BTC",
             Date = @"2013-04-29 23:59:59",
@@ -20,9 +20,9 @@ public partial class BitcoinForecast : ContentPage
         };
 
         //Load model and predict output
-        var result = MLModel1.Predict(sampleData);
+        var result = BitcoinModel.Predict(sampleData);
+
+
     }
-    //Load sample data
-    
 
 }

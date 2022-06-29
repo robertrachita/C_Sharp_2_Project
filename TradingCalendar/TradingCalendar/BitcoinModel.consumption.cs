@@ -7,10 +7,10 @@ using System.IO;
 using System.Collections.Generic;
 namespace TradingCalendar
 {
-    public partial class MLModel1
+    public partial class BitcoinModel
     {
         /// <summary>
-        /// model input class for MLModel1.
+        /// model input class for BitcoinModel.
         /// </summary>
         #region model input class
         public class ModelInput
@@ -50,7 +50,7 @@ namespace TradingCalendar
         #endregion
 
         /// <summary>
-        /// model output class for MLModel1.
+        /// model output class for BitcoinModel.
         /// </summary>
         #region model output class
         public class ModelOutput
@@ -59,7 +59,7 @@ namespace TradingCalendar
         }
         #endregion
 
-        private static string MLNetModelPath = Path.GetFullPath("MLModel1.zip");
+        private static string MLNetModelPath = Path.GetFullPath("BitcoinModel.zip");
 
         public static readonly Lazy<PredictionEngine<ModelInput, ModelOutput>> PredictEngine = new Lazy<PredictionEngine<ModelInput, ModelOutput>>(() => CreatePredictEngine(), true);
 

@@ -11,7 +11,7 @@ using Microsoft.ML;
 
 namespace TradingCalendar
 {
-    public partial class MLModel1
+    public partial class BitcoinModel
     {
         public static ITransformer RetrainPipeline(MLContext context, IDataView trainData)
         {
@@ -29,11 +29,12 @@ namespace TradingCalendar
         public static IEstimator<ITransformer> BuildPipeline(MLContext mlContext)
         {
             // Data process configuration with pipeline data transformations
-            var pipeline = mlContext.Transforms.Categorical.OneHotEncoding(new []{new InputOutputColumnPair(@"Name", @"Name"),new InputOutputColumnPair(@"Symbol", @"Symbol")})      
-                                    .Append(mlContext.Transforms.ReplaceMissingValues(new []{new InputOutputColumnPair(@"SNo", @"SNo"),new InputOutputColumnPair(@"High", @"High"),new InputOutputColumnPair(@"Low", @"Low"),new InputOutputColumnPair(@"Open", @"Open"),new InputOutputColumnPair(@"Volume", @"Volume"),new InputOutputColumnPair(@"Marketcap", @"Marketcap")}))      
+            var pipeline = mlContext.Transforms.ReplaceMissingValues(new []{new InputOutputColumnPair(@"High", @"High"),new InputOutputColumnPair(@"Low", @"Low"),new InputOutputColumnPair(@"Open", @"Open"),new InputOutputColumnPair(@"Volume", @"Volume"),new InputOutputColumnPair(@"Marketcap", @"Marketcap")})      
+                                    .Append(mlContext.Transforms.Text.FeaturizeText(@"Name", @"Name"))      
+                                    .Append(mlContext.Transforms.Text.FeaturizeText(@"Symbol", @"Symbol"))      
                                     .Append(mlContext.Transforms.Text.FeaturizeText(@"Date", @"Date"))      
-                                    .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"Name",@"Symbol",@"SNo",@"High",@"Low",@"Open",@"Volume",@"Marketcap",@"Date"}))      
-                                    .Append(mlContext.Regression.Trainers.FastForest(new FastForestRegressionTrainer.Options(){NumberOfTrees=563,FeatureFraction=0.531709358110212F,LabelColumnName=@"Close",FeatureColumnName=@"Features"}));
+                                    .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"High",@"Low",@"Open",@"Volume",@"Marketcap",@"Name",@"Symbol",@"Date"}))      
+                                    .Append(mlContext.Regression.Trainers.FastForest(new FastForestRegressionTrainer.Options(){NumberOfTrees=721,FeatureFraction=0.169261299483552F,LabelColumnName=@"Close",FeatureColumnName=@"Features"}));
 
             return pipeline;
         }
