@@ -2,38 +2,38 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TradingCalendar.MainPage"
-             xmlns:viewmodel="clr-namespace:TradingCalendar"
-             x:DataType="viewmodel:MainPage"
              Title="Login Page"
-             Background="belle_delphine.jpg">
+             >
     <Grid>
         <StackLayout Margin="20">
             <Image
                Source="belle_delphine.jpg"
-               HorizontalOptions="StartAndExpand" HeightRequest="200"/>
+               HorizontalOptions="StartAndExpand" HeightRequest="150" WidthRequest="150"/>
             <StackLayout>
                 <Label FontFamily="OpenSansRegular" TextColor="{StaticResource Secondary-Color}"
                    FontSize="16" Text="Username"/>
-                <Grid Margin="0,5">
-                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="5"/>
+                <Grid Margin="0,5" Padding="10">
+                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="5" />
                     <Entry BackgroundColor="Transparent" TextColor="White" Margin="5,0"
-                   PlaceholderColor="LightGray" Placeholder="Enter your username"/>
+                           PlaceholderColor="LightGray" Placeholder="Enter your username" Keyboard="Email"/>
                 </Grid>
 
                 <Label FontFamily="OpenSansRegular" TextColor="{StaticResource Secondary-Color}"
                    FontSize="16" Text="Password"/>
-                <Grid Margin="0,5">
+                <Grid Margin="0,5" Padding="10">
                     <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="5"/>
                     <Entry BackgroundColor="Transparent" Placeholder="Enter your password" TextColor="White" Margin="5,0"
-                   PlaceholderColor="LightGray" IsPassword="True"/>
+                           PlaceholderColor="LightGray" IsPassword="True"/>
                 </Grid>
             </StackLayout>
 
             <Button Margin="0,15" BackgroundColor="{StaticResource Secondary-Color}" 
-                    Text="Sign in" TextColor="{StaticResource Primary-Color}" FontFamily="OpenSansBold" />
+                    Text="Sign in" TextColor="{StaticResource Primary-Color}" FontFamily="OpenSansBold" 
+                    />
 
-            <StackLayout>
-                
+            <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
+                <Label FontFamily="OpenSansRegular" TextColor="{StaticResource Secondary-Color}"
+                       FontSize="16" Text="Register" HorizontalOptions="EndAndExpand"/>
             </StackLayout>
             
         </StackLayout>

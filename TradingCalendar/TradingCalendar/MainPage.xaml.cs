@@ -1,14 +1,16 @@
 ﻿namespace TradingCalendar;
-
-using System.Windows.Input;
+using CommunityToolkit.Mvvm.Input;
 using TradingCalendar;
 public partial class MainPage : ContentPage
 {
-	int count = 0;
-
 	public MainPage()
 	{
 		InitializeComponent();
+	}
+
+    public async void goToRegister()
+	{
+		await Shell.Current.GoToAsync(nameof(RegisterPage));
 	}
 }
 
