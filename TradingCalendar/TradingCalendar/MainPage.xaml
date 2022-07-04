@@ -7,7 +7,7 @@
     <Grid>
         <StackLayout Margin="20">
             <Image
-               Source="belle_delphine.jpg"
+               Source="money.jpg"
                HorizontalOptions="StartAndExpand" HeightRequest="150" WidthRequest="150"/>
             <StackLayout>
                 <Label FontFamily="OpenSansRegular" TextColor="{StaticResource Secondary-Color}"
@@ -29,7 +29,7 @@
 
             <Button Margin="0,15" BackgroundColor="{StaticResource Secondary-Color}" 
                     Text="Sign in" TextColor="{StaticResource Primary-Color}" FontFamily="OpenSansBold" 
-                    />
+                    Clicked="Button_Clicked"/>
 
             <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
                 <Label FontFamily="OpenSansRegular" TextColor="{StaticResource Secondary-Color}"
