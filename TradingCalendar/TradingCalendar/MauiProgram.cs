@@ -1,4 +1,5 @@
 ﻿namespace TradingCalendar;
+using TradingCalendar.ViewModel;
 
 public static class MauiProgram
 {
@@ -14,6 +15,8 @@ public static class MauiProgram
 				fonts.AddFont("Sitka.ttf", "Sitka");
 				fonts.AddFont("OpenSans-Bold.ttf", "OpenSansBold");
 			});
+		builder.Services.AddSingleton<MainPage>();
+		builder.Services.AddSingleton<LoginPageViewModel>(); 
 
 		builder.Services.AddSingleton<RegisterPage>();
 
