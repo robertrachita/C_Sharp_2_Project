@@ -30,7 +30,7 @@
             </Frame>
         </StackLayout>
 
-        <Button Text="Sign in" TextColor="DarkGray" WidthRequest="100" CornerRadius="20" HorizontalOptions="Center" BackgroundColor="#0729ef"/>
+        <Button Text="Sign in" TextColor="DarkGray" WidthRequest="100" CornerRadius="20" HorizontalOptions="Center" BackgroundColor="#0729ef" />
 
         <StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="Center">
             <Label Text="Don't have any account yet?" TextColor="Gray"/>
