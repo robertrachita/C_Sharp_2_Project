@@ -4,39 +4,39 @@
              x:Class="TradingCalendar.MainPage"
              Title="Login Page"
              >
-    <Grid>
-        <StackLayout Margin="20">
-            <Image
-               Source="money.jpg"
-               HorizontalOptions="StartAndExpand" HeightRequest="150" WidthRequest="150"/>
-            <StackLayout>
-                <Label FontFamily="OpenSansRegular" TextColor="{StaticResource Secondary-Color}"
-                   FontSize="16" Text="Username"/>
-                <Grid Margin="0,5" Padding="10">
-                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="5" />
-                    <Entry BackgroundColor="Transparent" TextColor="White" Margin="5,0"
-                           PlaceholderColor="LightGray" Placeholder="Enter your username" Keyboard="Email"/>
-                </Grid>
+    <VerticalStackLayout Spacing="25" Padding="30,0" VerticalOptions="Center">
+        <Image Source="company.jpg" HeightRequest="150" WidthRequest="150"/>
 
-                <Label FontFamily="OpenSansRegular" TextColor="{StaticResource Secondary-Color}"
-                   FontSize="16" Text="Password"/>
-                <Grid Margin="0,5" Padding="10">
-                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="5"/>
-                    <Entry BackgroundColor="Transparent" Placeholder="Enter your password" TextColor="White" Margin="5,0"
-                           PlaceholderColor="LightGray" IsPassword="True"/>
-                </Grid>
-            </StackLayout>
+        <VerticalStackLayout Spacing="5">
+            <Label Text="Welcome to Trading Calendar!" FontSize="28" TextColor="Gray" HorizontalTextAlignment="Center"/>
+            <Label Text="Please log in to your account" FontSize="18" TextColor="Gray" HorizontalTextAlignment="Center"/>
+        </VerticalStackLayout>
 
-            <Button Margin="0,15" BackgroundColor="{StaticResource Secondary-Color}" 
-                    Text="Sign in" TextColor="{StaticResource Primary-Color}" FontFamily="OpenSansBold" 
-                    Clicked="Button_Clicked"/>
-
-            <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
-                <Label FontFamily="OpenSansRegular" TextColor="{StaticResource Secondary-Color}"
-                       FontSize="16" Text="Register" HorizontalOptions="EndAndExpand"/>
-            </StackLayout>
-            
+        <StackLayout Orientation="Horizontal">
+            <Frame ZIndex="1" HasShadow="True" HeightRequest="56" WidthRequest="56" CornerRadius="28" BorderColor="Black">
+                <Image Source="user.png" HeightRequest="20" WidthRequest="20" />
+            </Frame>
+            <Frame HeightRequest="45" Margin="-20,0,0,0" Padding="0" HasShadow="True" BorderColor="Black" HorizontalOptions="FillAndExpand">
+                <Entry Margin="20,0,0,0" VerticalOptions="Center" Placeholder="E-mail address" Keyboard="Email"/>
+            </Frame>
         </StackLayout>
-    </Grid>
- 
+
+        <StackLayout Orientation="Horizontal">
+            <Frame ZIndex="1" HasShadow="True" HeightRequest="56" WidthRequest="56" CornerRadius="28" BorderColor="Black">
+                <Image Source="user.png" HeightRequest="20" WidthRequest="20"/>
+            </Frame>
+            <Frame HeightRequest="45" Margin="-20,0,0,0" Padding="0" HasShadow="True" BorderColor="Black" HorizontalOptions="FillAndExpand">
+                <Entry Margin="20,0,0,0" VerticalOptions="Center" Placeholder="Password" IsPassword="True" Keyboard="Text"/>
+            </Frame>
+        </StackLayout>
+
+        <Button Text="Sign in" TextColor="DarkGray" WidthRequest="100" CornerRadius="20" HorizontalOptions="Center" BackgroundColor="#0729ef"/>
+
+        <StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="Center">
+            <Label Text="Don't have any account yet?" TextColor="Gray"/>
+            <Label Text="Sign up here" TextColor="#50b3f2" />
+        </StackLayout>
+    </VerticalStackLayout>
+
+
 </ContentPage>

@@ -9,7 +9,7 @@
     <FlyoutItem Title="Home">
         <ShellContent
             Title="Home"
-            ContentTemplate="{DataTemplate local:RegisterPage}"
+            ContentTemplate="{DataTemplate local:MainPage}"
             Route="MainPage" />
     </FlyoutItem>
     
